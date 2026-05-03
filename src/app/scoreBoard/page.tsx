@@ -37,7 +37,7 @@ export default async function ScoreBoard() {
 								user.id == session.user?.id && "bg-red-500"
 							)
 							return (
-								<tr>
+								<tr key={user.id}>
 									<td className={mergeClass}>{user.name}</td>
 									<td className={clsx(
 										mergeClass,

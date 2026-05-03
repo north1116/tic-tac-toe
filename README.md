@@ -29,14 +29,20 @@ npx auth secret
 ```
 
 then add following database env following your mysql database config
+```bash
 DATABASE_USER=
 DATABASE_PASSWORD=
+```
 
 then in DATABASE_URL env
+```bash
 DATABASE_URL="mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@localhost:3306/tic-tac-toe"
+```
 
 for example
+```bash
 DATABASE_URL="mysql://root:admin@localhost:3306/tic-tac-toe"
+```
 
 after that run
 ```bash
