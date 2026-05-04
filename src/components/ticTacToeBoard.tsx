@@ -269,7 +269,6 @@ export default function TicTacToeBoard( { userId, currentWinSteak = 0, currentSc
             </div>
           )}
         </>
-        // <ResultModal winner={winner} restart={restart} />
       ) : (
         <div className="text-xl font-bold">
           Turn: {turn === "PLAYER" ? "Player (X)" : "Bot (O)"}
@@ -284,16 +283,16 @@ export default function TicTacToeBoard( { userId, currentWinSteak = 0, currentSc
                 onClick={() => handleClick(r, c)}
                 className="
                   h-20 w-20 rounded-xl 
-                  bg-white border border-gray-300 shadow 
+                  bg-board border border-gray-300 shadow 
                   flex items-center justify-center
                   text-4xl font-bold
                   transition-all duration-150
-                  hover:scale-105 hover:bg-blue-50
+                  hover:scale-105 hover:bg-hover-cell
                 "
               >
                 <span
                   className={`
-                    ${cell === "X" ? "text-red-500" : "text-blue-500"}
+                    ${cell === "X" ? "text-x" : "text-o"}
                   `}
                 >
                   {cell}
@@ -304,15 +303,35 @@ export default function TicTacToeBoard( { userId, currentWinSteak = 0, currentSc
       </div>
 
     <div className="flex justify-between gap-5">
-          <button
+    <button
       onClick={onBackInGameClick}
-      className="mt-4 bg-black text-white px-6 py-2 rounded hover:bg-red-700"
+      // className="mt-4 bg-black text-white px-6 py-2 rounded hover:bg-red-700"
+      className="block 
+        border border-[#ff00e6] 
+        px-6 py-3 
+        rounded-xl 
+        text-center 
+        bg-[#ff00e6] text-black shadow-[0_0_10px_#ff00e6]
+        hover:shadow-[0_0_20px_#ff00e6] hover:bg-[#ff54ff]
+        font-semibold 
+        hover:text-white
+        transition-all duration-300"
     >
       Back to Main Menu
     </button>
       <button
         onClick={onRestartInGameClick}
-        className="mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+        className="block 
+        border border-[#ff00e6] 
+        px-6 py-3 
+        rounded-xl 
+        text-center 
+        text-[#00eaff]
+        font-semibold 
+        shadow-[0_0_10px_#ff00e6,0_0_20px_#ff00e6]
+        hover:shadow-[0_0_20px_#ff00e6,0_0_40px_#ff00e6]
+        hover:text-white
+        transition-all duration-300"
       >
         Restart
       </button>

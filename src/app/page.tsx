@@ -1,3 +1,4 @@
+import { MenuButton } from "@/components/MenuButton";
 import { SignOutButton } from "@/components/SignOutButton";
 import { auth } from "@/lib/auth";
 import Image from "next/image";
@@ -12,17 +13,19 @@ export default async function Home() {
   return (
     <div className="flex h-screen">
       <div className="m-auto">
-        <div className="mb-2">Hi Welcome to Home Page {session?.user?.name}</div>
+        <div className="mb-2 text-[#ff00e6] text-3xl text-center">{session?.user?.name}</div>
+        <div className="mb-5 text-[#00eaff] text-3xl text-center">Welcome to Tic Tac Toe</div>
+
         <div>
-          <div className="border-black border-1">
+          {/* <div className="border-black border-1">
               <Link href="/game" >Play Game</Link>
-          </div>
-          <div className="border-black border-1">
-            <Link href="/scoreBoard" >View Score Board</Link>
-          </div>
-          <div className="border-black border-1">
+          </div> */}
+          <MenuButton href="/game">Play Game</MenuButton>
+          <MenuButton href="/scoreBoard">View Score Board</MenuButton>
+          <SignOutButton />
+          {/* <div className="border-black border-1">
               <SignOutButton />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
